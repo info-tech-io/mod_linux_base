@@ -12,6 +12,23 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Debug PAT_TOKEN and environment
+      run: |
+        echo "🔍 Debugging PAT_TOKEN and workflow environment"
+        echo "PAT_TOKEN length: ${#PAT_TOKEN}"
+        echo "PAT_TOKEN prefix: ${PAT_TOKEN:0:4}..."
+        echo "Target repository: info-tech-io/infotecha"
+        echo "Event type: module-updated"
+        echo "GitHub event: ${{ github.event_name }}"
+        echo "GitHub SHA: ${{ github.sha }}"
+        if [ -z "$PAT_TOKEN" ]; then
+          echo "❌ PAT_TOKEN is empty"
+          exit 1
+        fi
+        echo "✅ PAT_TOKEN is present"
+      env:
+        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        
     - name: Notify infotecha hub
       uses: peter-evans/repository-dispatch@v3
       with:
