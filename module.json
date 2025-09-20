@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "name": "linux-base",
+  "title": "Основы Linux",
+  "description": "Введение в операционную систему Linux для начинающих. Полный курс с практическими заданиями и интерактивными тестами.",
+  "version": "1.0.0",
+  "type": "educational",
+
+  "deployment": {
+    "subdomain": "linux-base",
+    "repository": "mod_linux_base",
+    "build_system": "hugo-base"
+  },
+
+  "hugo_config": {
+    "template": "default",
+    "theme": "compose",
+    "components": ["quiz-engine"],
+    "hugo_version": "0.148.0"
+  },
+
+  "metadata": {
+    "author": "InfoTech.io Team",
+    "maintainer": "info-tech-io",
+    "license": "MIT",
+    "difficulty": "beginner",
+    "estimated_time": "40 hours",
+    "language": "ru",
+    "tags": ["linux", "command-line", "system-administration", "terminal", "beginner"]
+  },
+
+  "urls": {
+    "production": "https://linux-base.infotecha.ru",
+    "repository": "https://github.com/info-tech-io/mod_linux_base",
+    "issues": "https://github.com/info-tech-io/mod_linux_base/issues"
+  },
+
+  "status": {
+    "lifecycle": "stable",
+    "last_updated": "2025-09-20",
+    "content_complete": true,
+    "testing_complete": true,
+    "review_complete": true
+  }
+}
